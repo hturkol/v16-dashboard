@@ -23,22 +23,12 @@ Author: Custom Development
     'website': 'https://www.example.com',
     'license': 'LGPL-3',
     'depends': [
-        'web_widget_advanced_domain',
+        'base',
         'web',
     ],
     'data': [
-        'templates/assets.xml',
         'data/ir_config_parameter.xml',
     ],
-    'qweb': [
-        'static/src/xml/dashboard_period_customization.xml',
-    ],
-    'assets': {
-        'web.assets_backend': [
-            'dashboard_period_customization/static/src/js/dashboard_period_customization.js',
-            'dashboard_period_customization/static/src/scss/dashboard_period_customization.scss',
-        ],
-    },
     'installable': True,
     'auto_install': False,
     'application': False,
