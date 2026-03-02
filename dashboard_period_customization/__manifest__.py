@@ -27,6 +27,7 @@ Author: Custom Development
         'web',
     ],
     'data': [
+        'static/src/xml/simple_assets.xml',
         'data/ir_config_parameter.xml',
     ],
     'installable': True,
