@@ -1,0 +1,73 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* dashboard_period_customization
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-02 15:43+0000\n"
+"PO-Revision-Date: 2026-03-02 15:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dashboard_period_customization
+#: model:ir.model.fields,field_description:dashboard_period_customization.field_ir_config_parameter__key
+msgid "Key"
+msgstr "Anahtar"
+
+#. module: dashboard_period_customization
+#: model:ir.model.fields,field_description:dashboard_period_customization.field_ir_config_parameter__value
+msgid "Value"
+msgstr "Değer"
+
+#. module: dashboard_period_customization
+#. odoo-javascript
+#: code:addons/dashboard_period_customization/static/src/js/dashboard_period_customization.js:0
+#, python-format
+msgid "Özel Tarih Aralığı Seçin"
+msgstr "Özel Tarih Aralığı Seçin"
+
+#. module: dashboard_period_customization
+#. odoo-javascript
+#: code:addons/dashboard_period_customization/static/src/js/dashboard_period_customization.js:0
+#, python-format
+msgid "Başlangıç Tarihi"
+msgstr "Başlangıç Tarihi"
+
+#. module: dashboard_period_customization
+#. odoo-javascript
+#: code:addons/dashboard_period_customization/static/src/js/dashboard_period_customization.js:0
+#, python-format
+msgid "Bitiş Tarihi"
+msgstr "Bitiş Tarihi"
+
+#. module: dashboard_period_customization
+#. odoo-javascript
+#: code:addons/dashboard_period_customization/static/src/js/dashboard_period_customization.js:0
+#, python-format
+msgid "İptal"
+msgstr "İptal"
+
+#. module: dashboard_period_customization
+#. odoo-javascript
+#: code:addons/dashboard_period_customization/static/src/js/dashboard_period_customization.js:0
+#, python-format
+msgid "Uygula"
+msgstr "Uygula"
+
+#. module: dashboard_period_customization
+#. odoo-javascript
+#: code:addons/dashboard_period_customization/static/src/js/dashboard_period_customization.js:0
+#, python-format
+msgid "Lütfen başlangıç ve bitiş tarihlerini seçin."
+msgstr "Lütfen başlangıç ve bitiş tarihlerini seçin."
+
+#. module: dashboard_period_customization
+#: model:ir.model,name:dashboard_period_customization.model_ir_config_parameter
+msgid "System Parameter"
+msgstr "Sistem Parametresi"

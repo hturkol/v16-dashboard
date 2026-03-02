@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Configuration parameters for dashboard period customization -->
+        <record id="dashboard_period_customization_enabled" model="ir.config_parameter">
+            <field name="key">dashboard_period_customization.enabled</field>
+            <field name="value">True</field>
+        </record>
+        
+        <record id="dashboard_period_customization_default_ranges" model="ir.config_parameter">
+            <field name="key">dashboard_period_customization.default_ranges</field>
+            <field name="value">last_7_days,last_30_days,last_90_days,last_180_days,last_365_days,last_3_years,custom_range</field>
+        </record>
+    </data>
+</odoo>
