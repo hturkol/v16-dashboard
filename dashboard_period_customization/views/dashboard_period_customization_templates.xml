@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Simple template that doesn't inherit from web.assets_backend -->
+        <template id="dashboard_period_customization_script_loader">
+            <script type="text/javascript" src="/dashboard_period_customization/static/src/js/simple_dashboard_customization.js"/>
+        </template>
+    </data>
+</odoo>

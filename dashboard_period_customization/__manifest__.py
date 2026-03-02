@@ -27,8 +27,8 @@ Author: Custom Development
         'web',
     ],
     'data': [
-        'static/src/xml/simple_assets.xml',
         'data/ir_config_parameter.xml',
+        'views/dashboard_period_customization_templates.xml',
     ],
     'installable': True,
     'auto_install': False,
