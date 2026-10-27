@@ -27,7 +27,7 @@ Turkish translations included.
     ],
     'data': [],
     'assets': {
-        'web.assets_backend': [
+        'spreadsheet.o_spreadsheet': [
             'dashboard_period_customization/static/src/scss/period_selector.scss',
             'dashboard_period_customization/static/src/js/period_ranges.js',
             'dashboard_period_customization/static/src/js/period_selector.js',

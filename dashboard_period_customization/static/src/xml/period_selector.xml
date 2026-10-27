@@ -50,7 +50,7 @@
 
     <!-- Replace the default date filter controls (relative select + fixed
          period picker) with the unified period selector. -->
-    <t t-name="spreadsheet_edition.FilterValue" t-inherit="spreadsheet_edition.FilterValue" t-inherit-mode="extension" owl="1">
+    <t t-name="dashboard_period_customization.FilterValue" t-inherit="spreadsheet.spreadsheet_edition.FilterValue" t-inherit-mode="extension" owl="1">
         <xpath expr="//div[@t-if=&quot;filter.type === 'date'&quot;]" position="replace">
             <div t-if="filter.type === 'date'" class="w-100">
                 <PeriodSelector filter="filter" model="props.model"/>

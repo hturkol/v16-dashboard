@@ -17,8 +17,10 @@ değiştirir.
 
 ## Nasıl Çalışır
 
-- `FilterValue` template'i `t-inherit` ile patch'lenir ve tarih filtreleri
-  `PeriodSelector` komponentiyle render edilir.
+- Tüm dosyalar tembel yüklenen `spreadsheet.o_spreadsheet` bundle'ına eklenir
+  (dashboard açıldığında yüklenir — `web.assets_backend`'i kirletmez).
+- `spreadsheet_edition.FilterValue` template'i `t-inherit` ile patch'lenir ve
+  tarih filtreleri `PeriodSelector` komponentiyle render edilir.
 - `GlobalFiltersUIPlugin._getDateDomain` patch'lenerek `{from, to}` değerleri
   ve ek preset tipleri `[[alan, ">=", başlangıç], [alan, "<=", bitiş]]`
   domain'ine çevrilir.
