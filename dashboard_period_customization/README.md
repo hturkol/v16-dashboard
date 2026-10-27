@@ -1,83 +1,59 @@
 # Dashboard Period Customization
 
-## Overview
+## Genel Bakış
 
-This Odoo module adds custom date range selection functionality to dashboard period filters. It allows users to select custom date ranges beyond the predefined options like "Last 7 Days", "Last 30 Days", etc.
+Odoo 16 Community'deki **Panolar** (`spreadsheet_dashboard`) ekranındaki tarih
+filtrelerini, Odoo 19'dakine benzer tek açılır menülü bir dönem seçici ile
+değiştirir.
 
-## Features
+## Özellikler
 
-- 🎯 **Custom Date Range Selection**: Users can select specific start and end dates
-- 🌐 **Turkish Language Support**: Full Turkish translation included
-- 🎨 **Modern UI**: Bootstrap modal with clean interface
-- 🔧 **Easy Installation**: Simple module installation and configuration
-- 📱 **Responsive Design**: Works on all screen sizes
+- **Hazır dönemler**: Bugün, Dün, Son 7/30/90/180/365 Gün, Son 3 Yıl,
+  Aydan Bugüne, Geçen Ay, Bu Çeyrek, Bu Yıl, Yılbaşından Bugüne, Son 12 Ay
+- **Tüm Zaman**: Filtreyi temizler
+- **Özel Aralık**: Başlangıç–bitiş tarihi seçimi (v17'deki `from_to`
+  özelliğinin v16'ya backport'u)
+- Türkçe dil desteği
 
-## Installation
+## Nasıl Çalışır
 
-1. Copy the `dashboard_period_customization` folder to your Odoo addons directory
-2. Update your addons list: `./odoo-bin -u base --stop-after-init`
-3. Install the module from Apps menu or via command line:
-   ```bash
-   ./odoo-bin -d database_name -i dashboard_period_customization
-   ```
+- `FilterValue` template'i `t-inherit` ile patch'lenir ve tarih filtreleri
+  `PeriodSelector` komponentiyle render edilir.
+- `GlobalFiltersUIPlugin._getDateDomain` patch'lenerek `{from, to}` değerleri
+  ve ek preset tipleri `[[alan, ">=", başlangıç], [alan, "<=", bitiş]]`
+  domain'ine çevrilir.
+- Ek preset tipleri `RELATIVE_DATE_RANGE_TYPES` listesine eklenir; böylece
+  `SET_GLOBAL_FILTER_VALUE` doğrulamasından sorunsuz geçerler.
 
-## Usage
+## Gereksinim
 
-1. Go to any dashboard with period selection dropdown
-2. Click on the dropdown menu
-3. Select "📅 Özel Tarih Aralığı" (Custom Date Range)
-4. Choose your start and end dates in the modal dialog
-5. Click "Uygula" (Apply) to apply the custom date range
+Dashboard'da en az bir **tarih tipinde global filter** tanımlı olmalıdır
+(`rangeType` fark etmeksizin — `relative`, `month`, `quarter`, `year` hepsi
+yeni seçiciyle gösterilir). Filtre yoksa gösterilecek kontrol de yoktur.
 
-## Configuration
+## Kurulum
 
-The module can be configured through System Parameters:
+1. Modülü addons dizinine koyulduğundan emin olun (zaten orada)
+2. Apps listesini güncelleyin
+3. `Dashboard Period Customization` modülünü kurun/yükseltin
+4. Tarayıcı önbelleğini temizleyin (Ctrl+F5)
 
-- `dashboard_period_customization.enabled`: Enable/disable the custom functionality
-- `dashboard_period_customization.default_ranges`: Configure which ranges appear in the dropdown
-
-## Technical Details
-
-### Files Structure
+## Dosya Yapısı
 
 ```
 dashboard_period_customization/
-├── __init__.py
 ├── __manifest__.py
-├── models/
-│   ├── __init__.py
-│   └── ir_config_parameter.py
-├── static/
-│   ├── src/
-│   │   ├── js/
-│   │   │   └── dashboard_period_customization.js
-│   │   ├── scss/
-│   │   │   └── dashboard_period_customization.scss
-│   │   └── xml/
-│   │       └── dashboard_period_customization.xml
-│   └── description/
-│       └── banner.png
-├── templates/
-│   └── assets.xml
-├── data/
-│   └── ir_config_parameter.xml
-├── i18n/
-│   └── tr.po
-└── README.md
+├── i18n/tr.po
+└── static/src/
+    ├── js/
+    │   ├── period_ranges.js       # preset tipleri + domain yardımcıları
+    │   ├── period_selector.js     # OWL dropdown komponenti
+    │   └── filter_value_patch.js  # plugin & komponent patch'leri
+    ├── xml/
+    │   └── period_selector.xml    # template + FilterValue patch'i
+    └── scss/
+        └── period_selector.scss
 ```
-
-### Dependencies
-
-- `web_widget_advanced_domain`: Base date selection functionality
-- `web`: Core web framework
-
-### Customization
-
-The module uses Odoo's patch system to extend the existing `DateSelectionBits` component, ensuring compatibility with other modules and future Odoo updates.
-
-## Support
-
-For issues and questions, please contact your system administrator.
 
 ## License
 

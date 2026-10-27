@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="dashboard_period_customization.templates" xml:space="preserve">
+
+    <t t-name="dashboard_period_customization.PeriodSelector" owl="1">
+        <div class="o_dpc_period_selector" t-ref="root">
+            <button type="button"
+                    class="o_dpc_toggle o_input"
+                    t-on-click="toggleDropdown">
+                <span class="o_dpc_label text-truncate" t-esc="currentLabel"/>
+                <i class="fa fa-caret-down ms-2"/>
+            </button>
+            <div t-if="state.open" class="o_dpc_menu dropdown-menu show">
+                <t t-foreach="groups" t-as="group" t-key="group_index">
+                    <div t-if="!group_first" class="dropdown-divider"/>
+                    <a t-foreach="group" t-as="item" t-key="item.type"
+                       class="dropdown-item o_dpc_item"
+                       t-att-class="{ 'o_dpc_selected': isSelected(item.type) }"
+                       href="#"
+                       t-on-click.prevent="() => this.selectPreset(item.type)">
+                        <i t-if="isSelected(item.type)" class="fa fa-check me-1"/>
+                        <t t-esc="item.description"/>
+                    </a>
+                </t>
+                <div class="dropdown-divider"/>
+                <a class="dropdown-item o_dpc_item" href="#"
+                   t-on-click.prevent="selectAllTime">
+                    <t t-esc="env._t('All Time')"/>
+                </a>
+                <div class="dropdown-divider"/>
+                <div class="o_dpc_custom px-3 py-2"
+                     t-att-class="{ 'o_dpc_selected': isCustomRangeActive }">
+                    <div class="o_dpc_custom_title fw-bold mb-1">
+                        <t t-esc="env._t('Custom Range')"/>
+                    </div>
+                    <div class="d-flex align-items-center gap-1">
+                        <input type="date" class="o_input form-control form-control-sm"
+                               t-model="state.customFrom"/>
+                        <span class="text-muted">–</span>
+                        <input type="date" class="o_input form-control form-control-sm"
+                               t-model="state.customTo"/>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-sm mt-2 w-100"
+                            t-on-click="applyCustomRange">
+                        <t t-esc="env._t('Apply')"/>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <!-- Replace the default date filter controls (relative select + fixed
+         period picker) with the unified period selector. -->
+    <t t-name="spreadsheet_edition.FilterValue" t-inherit="spreadsheet_edition.FilterValue" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[@t-if=&quot;filter.type === 'date'&quot;]" position="replace">
+            <div t-if="filter.type === 'date'" class="w-100">
+                <PeriodSelector filter="filter" model="props.model"/>
+            </div>
+        </xpath>
+    </t>
+
+</templates>

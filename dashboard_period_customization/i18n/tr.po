@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-02 15:43+0000\n"
-"PO-Revision-Date: 2026-03-02 15:43+0000\n"
+"POT-Creation-Date: 2026-10-27 12:00+0000\n"
+"PO-Revision-Date: 2026-10-27 12:00+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,58 +16,85 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: dashboard_period_customization
-#: model:ir.model.fields,field_description:dashboard_period_customization.field_ir_config_parameter__key
-msgid "Key"
-msgstr "Anahtar"
-
-#. module: dashboard_period_customization
-#: model:ir.model.fields,field_description:dashboard_period_customization.field_ir_config_parameter__value
-msgid "Value"
-msgstr "Değer"
+#. odoo-javascript
+#: code:addons/dashboard_period_customization/static/src/js/period_ranges.js:0
+#, python-format
+msgid "Today"
+msgstr "Bugün"
 
 #. module: dashboard_period_customization
 #. odoo-javascript
-#: code:addons/dashboard_period_customization/static/src/js/dashboard_period_customization.js:0
+#: code:addons/dashboard_period_customization/static/src/js/period_ranges.js:0
 #, python-format
-msgid "Özel Tarih Aralığı Seçin"
-msgstr "Özel Tarih Aralığı Seçin"
+msgid "Yesterday"
+msgstr "Dün"
 
 #. module: dashboard_period_customization
 #. odoo-javascript
-#: code:addons/dashboard_period_customization/static/src/js/dashboard_period_customization.js:0
+#: code:addons/dashboard_period_customization/static/src/js/period_ranges.js:0
 #, python-format
-msgid "Başlangıç Tarihi"
-msgstr "Başlangıç Tarihi"
+msgid "Month to Date"
+msgstr "Aydan Bugüne"
 
 #. module: dashboard_period_customization
 #. odoo-javascript
-#: code:addons/dashboard_period_customization/static/src/js/dashboard_period_customization.js:0
+#: code:addons/dashboard_period_customization/static/src/js/period_ranges.js:0
 #, python-format
-msgid "Bitiş Tarihi"
-msgstr "Bitiş Tarihi"
+msgid "Previous Month"
+msgstr "Geçen Ay"
 
 #. module: dashboard_period_customization
 #. odoo-javascript
-#: code:addons/dashboard_period_customization/static/src/js/dashboard_period_customization.js:0
+#: code:addons/dashboard_period_customization/static/src/js/period_ranges.js:0
 #, python-format
-msgid "İptal"
-msgstr "İptal"
+msgid "This Quarter"
+msgstr "Bu Çeyrek"
 
 #. module: dashboard_period_customization
 #. odoo-javascript
-#: code:addons/dashboard_period_customization/static/src/js/dashboard_period_customization.js:0
+#: code:addons/dashboard_period_customization/static/src/js/period_ranges.js:0
 #, python-format
-msgid "Uygula"
+msgid "This Year"
+msgstr "Bu Yıl"
+
+#. module: dashboard_period_customization
+#. odoo-javascript
+#: code:addons/dashboard_period_customization/static/src/js/period_ranges.js:0
+#, python-format
+msgid "Year to Date"
+msgstr "Yılbaşından Bugüne"
+
+#. module: dashboard_period_customization
+#. odoo-javascript
+#: code:addons/dashboard_period_customization/static/src/js/period_ranges.js:0
+#, python-format
+msgid "Last 12 Months"
+msgstr "Son 12 Ay"
+
+#. module: dashboard_period_customization
+#. odoo-javascript
+#: code:addons/dashboard_period_customization/static/src/js/period_selector.js:0
+#, python-format
+msgid "Period"
+msgstr "Dönem"
+
+#. module: dashboard_period_customization
+#. odoo-javascript
+#: code:addons/dashboard_period_customization/static/src/xml/period_selector.xml:0
+#, python-format
+msgid "All Time"
+msgstr "Tüm Zaman"
+
+#. module: dashboard_period_customization
+#. odoo-javascript
+#: code:addons/dashboard_period_customization/static/src/xml/period_selector.xml:0
+#, python-format
+msgid "Custom Range"
+msgstr "Özel Aralık"
+
+#. module: dashboard_period_customization
+#. odoo-javascript
+#: code:addons/dashboard_period_customization/static/src/xml/period_selector.xml:0
+#, python-format
+msgid "Apply"
 msgstr "Uygula"
-
-#. module: dashboard_period_customization
-#. odoo-javascript
-#: code:addons/dashboard_period_customization/static/src/js/dashboard_period_customization.js:0
-#, python-format
-msgid "Lütfen başlangıç ve bitiş tarihlerini seçin."
-msgstr "Lütfen başlangıç ve bitiş tarihlerini seçin."
-
-#. module: dashboard_period_customization
-#: model:ir.model,name:dashboard_period_customization.model_ir_config_parameter
-msgid "System Parameter"
-msgstr "Sistem Parametresi"
